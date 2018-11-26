@@ -1,0 +1,18 @@
+spring:
+  server:
+    port: 8080
+  application:
+    name: bigdata-mongodb-service
+dubbo:
+  scan:
+    basePackages: com.huni.service
+  application:
+    id: dubbo-service
+    name: dubbo_service
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20880
+  registry:
+    id: my-registry
+    address: zookeeper://172.16.4.114:2181
