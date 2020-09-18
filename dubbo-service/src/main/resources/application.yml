@@ -6,13 +6,11 @@ spring:
 dubbo:
   scan:
     basePackages: com.huni.service
-  application:
-    id: dubbo-service
+  application: ## <!-- 提供方应用信息，用于计算依赖关系 -->
     name: dubbo_service
-  protocol:
-    id: dubbo
-    name: dubbo
+  protocol:  ## <!-- 用dubbo协议在20880端口暴露服务 -->
     port: 20880
-  registry:
-    id: my-registry
+  registry:  ## <!-- 使用multicast广播注册中心暴露服务地址 -->
     address: zookeeper://172.16.4.114:2181
+  provider:
+    group:

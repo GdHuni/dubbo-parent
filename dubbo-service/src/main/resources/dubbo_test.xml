@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 详细配置见 http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%3Cdubbo%3Areference%2F%3E -->
+
+    <!-- 当applicationContext.xml中没有配置provider时，将dubbo:application标签打开 -->
+
+   <!-- <dubbo:application name="${dubbo.name}" organization="leyoujia" owner="bigdata"/>-->
+    <dubbo:registry protocol="zookeeper" address="${dubbo.address}" check="false" />
+    <dubbo:protocol name="dubbo" port="${dubbo.port}" />
+
+
+    <!--消费者-->
+    <!--<dubbo:reference interface="com.leyoujia.analysis.service.clickhouse.IClickHouseService" id="clickHouseService" timeout="60000" check="false" group="${dubbo.group}"/>-->
+    <!--生产者-->
+    <!--<dubbo:service interface="com.leyoujia.analysis.service.newreport.NewReportAuthService" ref="newReportAuthService" timeout="60000" retries="3" group=""/>-->
+</beans>
